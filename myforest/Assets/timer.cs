@@ -1,19 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class timer : MonoBehaviour
+{
 
 	// Use this for initialization
-    float  myTimer = 6.67;
+  public float myTimer = 8.0f;
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
         if (myTimer > 0)
         {
             myTimer -= Time.deltaTime;
         }
         if (myTimer <= 0)
         {
-            Debug.Log("GAME OVER");
+            //Debug.Log("GAME OVER");
+            Application.LoadLevel("gameOver");
         }
+
 	}
+
 }
