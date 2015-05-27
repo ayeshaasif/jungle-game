@@ -5,7 +5,7 @@ public class timer : MonoBehaviour
 {
 
 	// Use this for initialization
-  public float myTimer = 8.0f;
+  public float myTimer = 300.0f;
 	// Update is called once per frame
 	void Update () 
     {
