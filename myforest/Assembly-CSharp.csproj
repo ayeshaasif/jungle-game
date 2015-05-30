@@ -49,6 +49,7 @@
      <Compile Include="Assets\AttackGorilla.cs" />
      <Compile Include="Assets\DestroyGameObjectAfterSpund.cs" />
      <Compile Include="Assets\EnemyAI.cs" />
+     <Compile Include="Assets\GetHit.cs" />
      <Compile Include="Assets\Meshes\Bushes\Bush 05\Textures\player.cs" />
      <Compile Include="Assets\PlayerHealth.cs" />
      <Compile Include="Assets\Shoot.cs" />
