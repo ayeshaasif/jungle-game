@@ -4,7 +4,7 @@ using System.Collections;
 public class Shoot : MonoBehaviour 
 {
 	public Rigidbody projectile;
-	public float speed = 30;
+	public float speed = 40;
 	public GameObject gunShotSound;
 	public GameObject particle;
 	//public Transform endOFgun;
@@ -31,11 +31,17 @@ public class Shoot : MonoBehaviour
 			GameObject Particle = Instantiate (particle, transform.position, Quaternion.identity)as GameObject;
 		}
 	}
-		void OnTriggerEnter(Collider other) {
-			if(other.gameObject.tag == "Enemy")
-			{
-				DestroyObject(other.gameObject);
-			}
-		}
-
+        //void OnTriggerEnter(Collider other) {
+        //    if(other.gameObject.tag == "Enemy")
+        //    {
+        //        DestroyObject(other.gameObject);
+        //    }
+        //}
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

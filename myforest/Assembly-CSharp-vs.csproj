@@ -52,11 +52,12 @@
      <Compile Include="Assets\GetHit.cs" />
      <Compile Include="Assets\Meshes\Bushes\Bush 05\Textures\player.cs" />
      <Compile Include="Assets\PlayerHealth.cs" />
+     <Compile Include="Assets\Rotator.cs" />
      <Compile Include="Assets\Shoot.cs" />
      <Compile Include="Assets\Terrain Assets\Trees Ambient-Occlusion\gui1.cs" />
+     <Compile Include="Assets\Timer.cs" />
      <Compile Include="Assets\changeScene.cs" />
      <Compile Include="Assets\menuScript.cs" />
-     <Compile Include="Assets\timer.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
