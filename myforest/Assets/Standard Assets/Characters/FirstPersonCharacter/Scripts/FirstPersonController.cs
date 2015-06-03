@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using System.Collections;
+
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -44,7 +46,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         private int scorecount;
         public Text scoretext;
-        
+        public AudioClip collectsound;
+
+        int health = 1;
+      
 
         // Use this for initialization
         private void Start()
@@ -59,14 +64,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            
+
            scorecount= 0;
            setcountText();
+           
+    
         }
 
 
         // Update is called once per frame
         private void Update()
         {
+          
+            
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -85,8 +97,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
-
+           
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+            //AudioSource.PlayClipAtPoint(bkmusic1, transform.position); 
         }
 
 
@@ -261,17 +274,51 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Pick Up")) 
+            if (other.gameObject.CompareTag("Pick Up"))
             {
+                AudioSource.PlayClipAtPoint(collectsound, transform.position);
                 other.gameObject.SetActive(false);
                 scorecount = scorecount + 10;
                 setcountText();
             }
-        }
+//        else if (other.gameObject.tag == "Enemy") //&& lock == 0)
+//        {
+//            //DecreasingHealth();
+//            health=health-1;
+//                if(health==0){
+     
+//// Destroy(gameObject);
+//    Application.LoadLevel("gameOver");
+    // }
+            }
+       // }
         public void setcountText()
         {
            scoretext.text = "Score: " + scorecount.ToString();
         }
 
+// lock = 0;
+
+ 
+ 
+ //   void  OnTriggerEnter( Collider hit){
+        
+ //  //  }
+ 
+ ////void DecreasingHealth(){
+ //       // lock=1;
+ //       health=health-1;
+ //       // yield WaitForSeconds(wait_time);
+ //       // lock=0;
+ //   if(health==0){
+     
+ //    Destroy(gameObject);
+ //   Application.LoadLevel("gameOver");
+ //   }
+   // }
+ 
+   
+     }
+
     }
-}
+
